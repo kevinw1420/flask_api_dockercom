@@ -1,0 +1,1 @@
+uwsgi -i /var/www/html/flask_api/uwsgi.ini

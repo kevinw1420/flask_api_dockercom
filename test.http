@@ -1,0 +1,108 @@
+@host = http://localhost:80
+@source=employee
+@token=token IamRoot!!2021-09-0606:35:02.305731
+ 
+### POST auth admin
+POST {{host}}/auth HTTP/1.1
+Content-Type: application/json
+
+{       
+     "username": "IamRoot!!",
+     "key": "Password"
+}
+### Get by id
+GET {{host}}/{{source}}/7 HTTP/1.1 HTTP/1.1
+Content-Type: text/html; charset=utf-8
+Authorization: {{token}}
+
+### Get Error
+GET {{host}}/{{source}}/lo HTTP/1.1 HTTP/1.1
+Content-Type: text/html; charset=utf-8
+Authorization: {{token}}
+
+### Get All
+GET {{host}}/{{source}}/all HTTP/1.1 HTTP/1.1
+Content-Type: text/html; charset=utf-8
+Authorization: {{token}}
+### POST Employee
+POST {{host}}/{{source}} HTTP/1.1
+Content-Type: application/json
+Authorization: {{token}}
+
+{       
+     "email": "tdkkkkkky@mail.com",
+     "mobile": "0922822422",
+     "position": {
+         "title": "Dr.X",
+         "department": "Ops"
+     }
+}
+
+### POST Error
+POST {{host}}/{{source}} HTTP/1.1
+Content-Type: application/json
+Authorization: {{token}}
+
+{       
+     
+     "mobile": "0922322422",
+     "position": {
+         "title": "Dr.X",
+         "department": "Ops"
+     }
+}
+
+### PUT Employee
+PUT {{host}}/{{source}}/1 HTTP/1.1
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+     "email": "tonjjjjj@mail.com",
+     "mobile": "0922233322",
+     "position": {
+         "title": "Dr.X",
+         "department": "Ops"
+     }
+}
+
+### PUT Error
+PUT {{host}}/{{source}}/7 HTTP/1.1
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+     "mobile": "0922233322",
+     "position": {
+         "title": "Dr.X",
+         "department": "Ops"
+     }
+}
+
+### Delete Employee
+DELETE  {{host}}/{{source}}/1 HTTP/1.1
+Content-Type: text/html; charset=utf-8
+Authorization: {{token}}
+
+### POST crate admin
+POST {{host}}/create_admin HTTP/1.1
+Content-Type: application/json
+
+
+{       
+     "username": "IamRoot!!",
+     "key": "Password"
+}
+
+### POST auth admin
+POST {{host}}/auth HTTP/1.1
+Content-Type: application/json
+
+
+{       
+     "username": "IamRoot!!",
+     "key": "Password"
+}
+
+          
+    
